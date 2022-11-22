@@ -24,7 +24,7 @@ RUN chown -R Debian-exim:Debian-exim /etc/exim4 /var/spool/exim4 /var/log/exim4 
 
 USER ${USERNAME}
 WORKDIR /etc/exim4/
-VOLUME ["/var/spool/exim4", "/etc/exim4", "/var/log/exim4"]
+VOLUME /etc/exim4
 EXPOSE 25 587 465
 
 # SMTP on port 25 (IPv6 and IPv4) port 587 (IPv6 and IPv4)
