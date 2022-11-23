@@ -12,7 +12,7 @@ RUN groupadd --gid ${USER_GID} ${USERNAME} \
     && useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME} \
     && apt update && apt upgrade -y \
     && apt install exim4-daemon-heavy -y \
-    && rm -rf /var/lib/apt/lists /tmp/ \
+    && rm -rf /var/lib/apt/lists /tmp/* \
     && usermod -aG Debian-exim ${USERNAME}
 
 COPY exim4 /etc/exim4
